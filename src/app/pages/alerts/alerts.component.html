@@ -1,0 +1,12 @@
+<app-navbar></app-navbar>
+<div class="container">
+  <h2>Alerts</h2>
+
+  @for (alert of alerts; track $index) {
+    <div class="card">
+      <h3>{{alert.type}}</h3>
+      <p>{{alert.description}}</p>
+      <span>{{alert.distance}} km away</span>
+    </div>
+  }
+</div>

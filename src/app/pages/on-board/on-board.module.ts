@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { isStandalone, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
@@ -13,8 +13,8 @@ import { OnBoardPage } from './on-board.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    OnBoardPageRoutingModule
+    OnBoardPageRoutingModule,
+    OnBoardPage,
   ],
-  declarations: [OnBoardPage]
 })
 export class OnBoardPageModule {}

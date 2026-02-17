@@ -4,12 +4,10 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-update-password',
   templateUrl: './update-password.page.html',
   styleUrls: ['./update-password.page.scss'],
+  standalone: true,
 })
 export class UpdatePasswordPage implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

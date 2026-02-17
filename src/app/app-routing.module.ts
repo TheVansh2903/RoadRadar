@@ -22,16 +22,35 @@ const routes: Routes = [
       ),
   },
   {
-    path: 'update-password',
+    path: 'forgot-password',
     loadChildren: () =>
-      import('./pages/update-password/update-password.module').then(
-        (m) => m.UpdatePasswordPageModule,
+      import('./pages/forgot-password/forgot-password.module').then(
+        (m) => m.ForgotPasswordPageModule,
       ),
   },
   {
     path: '',
     redirectTo: 'on-board',
     pathMatch: 'full',
+  },
+  {
+    path: 'login-acc',
+    loadChildren: () =>
+      import('./pages/login-acc/login-acc.module').then(
+        (m) => m.LoginAccPageModule,
+      ),
+  },
+  {
+    path: 'register',
+    loadChildren: () =>
+      import('./pages/register/register.module').then(
+        (m) => m.RegisterPageModule,
+      ),
+  },
+  {
+    path: 'verify',
+    loadChildren: () =>
+      import('./pages/verify/verify.module').then((m) => m.VerifyPageModule),
   },
 ];
 

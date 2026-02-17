@@ -1,0 +1,7 @@
+{
+  "name": "RoadRadar",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

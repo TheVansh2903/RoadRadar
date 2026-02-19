@@ -34,11 +34,9 @@ const routes: Routes = [
     pathMatch: 'full',
   },
   {
-    path: 'login-acc',
+    path: 'sign-in',
     loadChildren: () =>
-      import('./pages/login-acc/login-acc.module').then(
-        (m) => m.LoginAccPageModule,
-      ),
+      import('./pages/sign-in/sign-in.module').then((m) => m.SignInPageModule),
   },
   {
     path: 'register',

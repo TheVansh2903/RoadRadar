@@ -1,0 +1,98 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  height: 100vh;
+  width: fill;
+  background: #ffffff;
+  padding: 25px;
+}
+
+/* Back Arrow */
+.header {
+  color: black;
+  display: inline-flex;
+  width: 100%;
+  font-size: 20px;
+  margin-bottom: 20px;
+  font-weight: 800;
+  margin-bottom: 30px;
+  align-items: center;
+  gap: 125px;
+  justify-content: center;
+}
+
+.back {
+  display: flex;
+  position: absolute;
+  left: 25px;
+}
+
+.subtitles {
+  margin-top: 50px;
+  color: black;
+  text-align: center;
+}
+.subtitles h1 {
+  margin-bottom: 15px;
+}
+
+.subtitles p {
+  margin-bottom: 15px;
+  color: #777;
+}
+
+.otp-container {
+  width: 100%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin: 25px 0;
+}
+
+.otp-input {
+  background-color: white;
+  width: 55px;
+  height: 55px;
+  border: 1px solid #777;
+  border-radius: 12px;
+  text-align: center;
+  font-size: 20px;
+  outline: none;
+}
+
+.otp-input:focus {
+  color: black;
+  border: 2px solid black;
+}
+.verify-btn {
+  width: 100%;
+  padding: 14px;
+  background: black;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+.timer {
+  color: black;
+  text-align: center;
+}
+
+span {
+  color: #777;
+}

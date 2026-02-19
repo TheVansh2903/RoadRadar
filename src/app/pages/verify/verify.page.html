@@ -1,0 +1,54 @@
+<head>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+  />
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="back"><i class="fa-solid fa-arrow-left"></i></div>
+      <div class="verify"><h1>Verify</h1></div>
+    </div>
+    <div class="OTP">
+      <img src="assets/otp.png" />
+    </div>
+    <div class="subtitles">
+      <h1>Enter OTP</h1>
+      <p>A 4 digit OTP has been sent to</p>
+      <h6 class="email">abc@gmail.com</h6>
+    </div>
+    <div class="otp-container">
+      <input
+        type="text"
+        maxlength="1"
+        inputmode="numeric"
+        oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+        class="otp-input"
+      />
+      <input
+        type="text"
+        maxlength="1"
+        oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+        class="otp-input"
+      />
+      <input
+        type="text"
+        maxlength="1"
+        oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+        class="otp-input"
+      />
+      <input
+        type="text"
+        maxlength="1"
+        oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+        class="otp-input"
+      />
+    </div>
+
+    <button class="verify-btn">Verify</button>
+
+    <p class="timer">Resend otp <span>(00:56)</span></p>
+  </div>
+</body>

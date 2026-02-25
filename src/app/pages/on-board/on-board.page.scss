@@ -6,7 +6,7 @@
 }
 
 body {
-  height: 100vh;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -15,7 +15,7 @@ body {
 
 .container {
   width: fit-content;
-  height: 100vh;
+  height: 100%;
   padding: 30px 25px;
   display: flex;
   flex-direction: column;
@@ -67,6 +67,7 @@ h2 {
   font-weight: bold;
   cursor: pointer;
   transition: 0.3s ease;
+  margin-top: 50px;
 }
 
 .login-btn:hover {

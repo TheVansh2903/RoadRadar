@@ -10,17 +10,15 @@
       <img src="assets/icon/logo.png" alt="" />
     </div>
     <div class="signIn-buttons">
-      <button class="login">Login</button><br />
-      <button class="sign-up">Sign up</button>
+      <button (click)="goToSignIn()" class="login">Login</button><br />
+      <button (click)="gotoSignUp()" class="sign-up">Sign up</button>
     </div>
     <div class="divider">
       <span>Or</span>
     </div>
-    <div>
-      <button class="google-btn">
-        <i class="fa-brands fa-google"></i>
-        <span>Continue With Google</span>
-      </button>
-    </div>
+    <button class="google-btn">
+      <i class="fa-brands fa-google"></i>
+      <span>Continue With Google</span>
+    </button>
   </div>
 </body>

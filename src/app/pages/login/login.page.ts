@@ -15,5 +15,11 @@ export class LoginPage implements OnInit {
 
   ngOnInit() {}
 
-  
+  goToSignIn() {
+    this.router.navigate(['/sign-in']);
+  }
+
+  gotoSignUp() {
+    this.router.navigate(['/register']);
+  }
 }

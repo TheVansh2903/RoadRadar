@@ -26,7 +26,7 @@
 
     <div class="options">
       <label> <input class="checkbox" type="checkbox" /> Remember me </label>
-      <a href="#">Forgot password?</a>
+      <a (click)="goToForgot()">Forgot password?</a>
     </div>
 
     <button class="login-btn">Login</button>
@@ -40,6 +40,6 @@
       Continue with Google
     </button>
 
-    <div class="signup">Don't have account? <a href="#">Sign up</a></div>
+    <div class="signup">Don't have account? <a (click)="goToSignUp()">Sign up</a></div>
   </div>
 </body>

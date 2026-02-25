@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { IonHeader, IonToolbar, IonTitle } from '@ionic/angular/standalone';
 
 @Component({
@@ -8,7 +9,11 @@ import { IonHeader, IonToolbar, IonTitle } from '@ionic/angular/standalone';
   standalone: true,
 })
 export class VerifyPage implements OnInit {
-  constructor() {}
+  constructor(private router:Router) {}
 
   ngOnInit() {}
+
+  goToSignIn(){
+    this.router.navigate(['/sign-in'])
+  }
 }

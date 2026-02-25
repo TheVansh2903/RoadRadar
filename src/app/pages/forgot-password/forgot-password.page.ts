@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { IonHeader, IonToolbar } from '@ionic/angular/standalone';
 
 @Component({
@@ -8,7 +9,11 @@ import { IonHeader, IonToolbar } from '@ionic/angular/standalone';
   standalone: true,
 })
 export class ForgotPasswordPage implements OnInit {
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit() {}
+
+  goToVerify() {
+    this.router.navigate(['/verify']);
+  }
 }

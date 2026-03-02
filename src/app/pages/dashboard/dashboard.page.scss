@@ -267,16 +267,19 @@ h2 {
 }
 
 #map {
-  height: 100%;
+  height: 400px;
   width: 100%;
   display: block;
+  background-color: white;
 }
 
-ion-content {
-  --background: transparent;
-  display: block;
-  padding-top: 0;
-  border: 2px solid #000000;
+.map-wrapper {
+  background-color: white;
+  margin: 0px 20px 0px 20px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  border: 2px solid black ;
 }
 .footer-tab {
   width: 100%;
@@ -298,16 +301,14 @@ button {
   font-size: large;
   background-color: transparent;
   color: #000000;
-  
 }
 button i {
   font-size: 30px;
 }
-.report-btn{
+.report-btn {
   width: 85px;
   height: 85px;
   background-color: #000000;
   border-radius: 16px;
   color: white;
-
 }

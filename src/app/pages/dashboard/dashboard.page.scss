@@ -1,18 +1,6 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Segoe UI", Arial, sans-serif;
-}
-
-body {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0;
-  background-color: white;
-  padding: 0;
+:host {
+  --font-family: "Segoe UI", Arial, sans-serif;
+  font-family: var(--font-family);
 }
 
 .title-bar {
@@ -206,6 +194,10 @@ body {
   text-align: center;
   color: #333;
 }
+h2 {
+  padding: 0px;
+  margin: 0px;
+}
 
 /* categories section styles */
 .categories-section {
@@ -252,6 +244,16 @@ body {
   font-size: 0.75rem;
   color: #333;
 }
+.categories-section {
+  position: relative;
+  top: auto;
+  left: auto;
+  width: 100%;
+  z-index: 10;
+  background: white;
+  pointer-events: auto;
+  margin-top: 60px;
+}
 .container {
   width: 100%;
   height: fit-content;
@@ -263,23 +265,49 @@ body {
   font-size: xx-large;
   margin-top: 10px;
 }
-.btn-frame {
+
+#map {
+  height: 100%;
   width: 100%;
-  height: 160px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: block;
 }
 
-.report-btn {
-  width: 125px;
-  height: 125px;
-  border-radius: 100%;
-  background-color: #F04444;
-  border: 2px solid #464646;
-  font-size:large;
+ion-content {
+  --background: transparent;
+  display: block;
+  padding-top: 0;
+  border: 2px solid #000000;
 }
-.report-btn i {
-  font-size: xx-large;
-  margin-bottom: 10px;
+.footer-tab {
+  width: 100%;
+  height: 90px;
+  display: inline-flex;
+  color: black;
+  background-color: white;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+button {
+  width: 65px;
+  height: 65px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: large;
+  background-color: transparent;
+  color: #000000;
+  
+}
+button i {
+  font-size: 30px;
+}
+.report-btn{
+  width: 85px;
+  height: 85px;
+  background-color: #000000;
+  border-radius: 16px;
+  color: white;
+
 }

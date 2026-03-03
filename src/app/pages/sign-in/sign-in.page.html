@@ -15,12 +15,12 @@
     <p class="input-title">Email address</p>
     <div class="input-group">
       <i class="fa-regular fa-envelope"></i>
-      <input type="email" placeholder="E-mail Address" />
+      <input type="email" placeholder="E-mail Address" [(ngModel)]="email" />
     </div>
     <p class="input-title">Password</p>
     <div class="input-group">
       <i class="fa-solid fa-key"></i>
-      <input type="password" placeholder="Password" />
+      <input type="password" placeholder="Password" [(ngModel)]="password" />
       <i class="fa-solid fa-eye"></i>
     </div>
 
@@ -40,6 +40,8 @@
       Continue with Google
     </button>
 
-    <div class="signup">Don't have account? <a (click)="goToSignUp()">Sign up</a></div>
+    <div class="signup">
+      Don't have account? <a (click)="goToSignUp()">Sign up</a>
+    </div>
   </div>
 </body>

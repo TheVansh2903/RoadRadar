@@ -16,22 +16,22 @@
     <p class="input-title">Enter Email address</p>
     <div class="input-group">
       <i class="fa-regular fa-envelope"></i>
-      <input type="email" placeholder="E-mail Address" />
+      <input type="email" placeholder="E-mail Address" [(ngModel)]="email" />
     </div>
     <p class="input-title">Enter Your Password</p>
     <div class="input-group">
       <i class="fa-solid fa-key"></i>
-      <input type="password" placeholder="Password" />
+      <input type="password" placeholder="Password" [(ngModel)]="password" />
       <i class="fa-solid fa-eye"></i>
     </div>
     <p class="input-title">Re-Enter Your Password</p>
     <div class="input-group">
       <i class="fa-solid fa-key"></i>
-      <input type="password" placeholder="Password" />
+      <input type="password" placeholder="Password" [(ngModel)]="confirmPassword" />
       <i class="fa-solid fa-eye"></i>
     </div>
 
-    <button class="login-btn">Sign Up</button>
+    <button class="login-btn" (click)="register()">Sign Up</button>
 
     <div class="divider">
       <span>Or</span>

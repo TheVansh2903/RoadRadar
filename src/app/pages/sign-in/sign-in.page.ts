@@ -27,13 +27,15 @@ export class SignInPage implements OnInit {
     this.router.navigate(['/register']);
   }
 
-  async login(){
-    try{
-      await this.authservice.login(this.email,this.password);
+  async login() {
+    try {
+      await this.authservice.login(this.email, this.password);
       this.router.navigate(['/dashboard']);
-    }catch(err:any)
-    {
+    } catch (err: any) {
       alert(err.message);
     }
+  }
+  goToDashboard() {
+    this.router.navigate(['/dashboard']);
   }
 }

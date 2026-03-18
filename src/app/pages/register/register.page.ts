@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { IonHeader } from '@ionic/angular/standalone';
 import { AuthService } from 'src/app/services/auth.service';
@@ -10,14 +11,14 @@ import { NavigationService } from 'src/app/services/navigation';
   templateUrl: './register.page.html',
   styleUrls: ['./register.page.scss'],
   standalone: true,
-  imports: [IonicModule, FormsModule],
+  imports: [IonicModule, FormsModule,CommonModule],
 })
 export class RegisterPage implements OnInit {
   email: string = '';
   password: string = '';
   confirmPassword: string = '';
   constructor(
-    public navService:NavigationService,
+    public navService: NavigationService,
     private router: Router,
     private authservice: AuthService,
   ) {}
@@ -39,5 +40,10 @@ export class RegisterPage implements OnInit {
     } catch (err: any) {
       alert(err.message);
     }
+  }
+  showPassword = false;
+
+  togglePassword() {
+    this.showPassword = !this.showPassword;
   }
 }

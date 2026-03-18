@@ -50,6 +50,13 @@ const routes: Routes = [
     loadChildren: () =>
       import('./pages/verify/verify.module').then((m) => m.VerifyPageModule),
   },
+  {
+    path: 'reset-password',
+    loadChildren: () =>
+      import('./pages/reset-password/reset-password.module').then(
+        (m) => m.ResetPasswordPageModule,
+      ),
+  },
 ];
 
 @NgModule({

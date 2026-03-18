@@ -6,7 +6,9 @@
 </head>
 <body>
   <div class="container">
-    <div (click)="navService.back()" class="back"><i class="fa-solid fa-arrow-left"></i></div>
+    <div (click)="navService.back()" class="back">
+      <i class="fa-solid fa-arrow-left"></i>
+    </div>
 
     <div class="logo"><img class="RR" src="assets/icon/logo.png" alt="" /></div>
 
@@ -20,8 +22,19 @@
     <p class="input-title">Password</p>
     <div class="input-group">
       <i class="fa-solid fa-key"></i>
-      <input type="password" placeholder="Password" [(ngModel)]="password" />
-      <i class="fa-solid fa-eye"></i>
+
+      <input
+        [type]="showPassword ? 'text' : 'password'"
+        placeholder="Password"
+        [(ngModel)]="password"
+      />
+
+      <i
+        class="fa-solid"
+        [ngClass]="showPassword ? 'fa-eye-slash' : 'fa-eye'"
+        (click)="togglePassword()"
+        style="cursor: pointer"
+      ></i>
     </div>
 
     <div class="options">
@@ -29,7 +42,7 @@
       <a (click)="goToForgot()">Forgot password?</a>
     </div>
 
-    <button class="login-btn" (click)="goToDashboard()">Login</button>
+    <button class="login-btn" (click)="login()">Login</button>
 
     <div class="divider">
       <span>Or</span>

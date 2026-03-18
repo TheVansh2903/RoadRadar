@@ -4,7 +4,7 @@ import { IonHeader } from '@ionic/angular/standalone';
 import { AuthService } from 'src/app/services/auth.service';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
-
+import { NavigationService } from 'src/app/services/navigation';
 @Component({
   selector: 'app-register',
   templateUrl: './register.page.html',
@@ -17,6 +17,7 @@ export class RegisterPage implements OnInit {
   password: string = '';
   confirmPassword: string = '';
   constructor(
+    public navService:NavigationService,
     private router: Router,
     private authservice: AuthService,
   ) {}

@@ -5,6 +5,7 @@ import { IonicModule } from '@ionic/angular';
 import { AuthService } from 'src/app/services/auth.service';
 import { Route } from '@angular/router';
 import { Router } from '@angular/router';
+import { NavigationService } from 'src/app/services/navigation';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.page.html',
@@ -15,6 +16,7 @@ import { Router } from '@angular/router';
 export class DashboardPage implements OnInit, AfterViewInit {
   map!: L.Map;
   constructor(
+    public navService:NavigationService,
     private authservice: AuthService,
     private router: Router,
   ) {}

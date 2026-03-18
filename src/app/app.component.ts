@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-
+import { StatusBar } from '@capacitor/status-bar';
+import { Platform } from '@ionic/angular';
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -7,5 +8,9 @@ import { Component } from '@angular/core';
   standalone: false,
 })
 export class AppComponent {
-  constructor() {}
+  constructor(private platform: Platform) {
+    this.platform.ready().then(() => {
+      StatusBar.setOverlaysWebView({ overlay: false });
+    });
+  }
 }

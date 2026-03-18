@@ -3,7 +3,7 @@ import { Route, Router } from '@angular/router';
 import { IonHeader, IonToolbar } from '@ionic/angular/standalone';
 import { FormsModule } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
-
+import { NavigationService } from 'src/app/services/navigation';
 @Component({
   selector: 'app-sign-in',
   templateUrl: './sign-in.page.html',
@@ -15,6 +15,7 @@ export class SignInPage implements OnInit {
   email: string = '';
   password: string = '';
   constructor(
+    public navService:NavigationService,
     private router: Router,
     private authservice: AuthService,
   ) {}

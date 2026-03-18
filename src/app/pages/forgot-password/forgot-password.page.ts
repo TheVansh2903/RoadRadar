@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { IonHeader, IonToolbar } from '@ionic/angular/standalone';
+import { NavigationService } from 'src/app/services/navigation';
 
 @Component({
   selector: 'app-forgot-password',
@@ -9,7 +10,9 @@ import { IonHeader, IonToolbar } from '@ionic/angular/standalone';
   standalone: true,
 })
 export class ForgotPasswordPage implements OnInit {
-  constructor(private router: Router) {}
+  constructor(
+    public navService:NavigationService,
+    private router: Router) {}
 
   ngOnInit() {}
 

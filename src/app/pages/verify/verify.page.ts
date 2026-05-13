@@ -8,7 +8,7 @@ import {
 } from '@ionic/angular/standalone';
 import { NavigationService } from 'src/app/services/navigation';
 import { ActivatedRoute } from '@angular/router';
-import { supabase } from 'src/app/supabase';
+import { supabase } from 'src/app/services/supabase';
 @Component({
   selector: 'app-verify',
   templateUrl: './verify.page.html',
@@ -33,13 +33,16 @@ export class VerifyPage implements OnInit {
     this.navCtrl.navigateRoot(['/sign-in']);
   }
 
-  async verifyOTP(){
-    const {data,error}=await supabase.auth.verifyOtp({email:this.email,token:this.OTP,type:'email'})
+  async verifyOTP() {
+    const { data, error } = await supabase.auth.verifyOtp({
+      email: this.email,
+      token: this.OTP,
+      type: 'email',
+    });
     if (error) {
-      alert(error.message)
-      return
+      alert(error.message);
+      return;
     }
-    this.navCtrl.navigateRoot('/reset-password')
-    
+    this.navCtrl.navigateRoot('/reset-password');
   }
 }

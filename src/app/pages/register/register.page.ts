@@ -11,7 +11,7 @@ import { NavigationService } from 'src/app/services/navigation';
   templateUrl: './register.page.html',
   styleUrls: ['./register.page.scss'],
   standalone: true,
-  imports: [IonicModule, FormsModule,CommonModule],
+  imports: [IonicModule, FormsModule, CommonModule],
 })
 export class RegisterPage implements OnInit {
   email: string = '';
@@ -42,8 +42,14 @@ export class RegisterPage implements OnInit {
     }
   }
   showPassword = false;
+  showConfirmPassword = false;
 
   togglePassword() {
     this.showPassword = !this.showPassword;
+    
+  }
+   toggleConfirmPassword() {
+    this.showConfirmPassword = !this.showConfirmPassword;
+    
   }
 }

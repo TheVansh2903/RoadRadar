@@ -6,7 +6,7 @@ import { AuthService } from 'src/app/services/auth.service';
 import { FormsModule } from '@angular/forms';
 import { IonicModule, NavController } from '@ionic/angular';
 import { NavigationService } from 'src/app/services/navigation';
-import { supabase } from 'src/app/supabase';
+import { supabase } from 'src/app/services/supabase';
 @Component({
   selector: 'app-reset-password',
   templateUrl: './reset-password.page.html',

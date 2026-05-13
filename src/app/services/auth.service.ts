@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { supabase } from '../supabase';
+import { supabase } from '../services/supabase';
 import { NavController } from '@ionic/angular';
 import { NavigationService } from './navigation';
 import { NavigationCancel } from '@angular/router';

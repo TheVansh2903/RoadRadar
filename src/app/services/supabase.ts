@@ -1,3 +1,4 @@
+import { Injectable } from '@angular/core';
 import { createClient } from '@supabase/supabase-js';
 
 const supabaseUrl = 'https://txfyrephofxrqhodbswe.supabase.co';
@@ -10,3 +11,9 @@ export const supabase = createClient(supabaseUrl, supabaseKey, {
     detectSessionInUrl: false,
   },
 });
+@Injectable({
+  providedIn: 'root',
+})
+export class SupabaseService {
+  client = createClient(supabaseUrl, supabaseKey);
+}

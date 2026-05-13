@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { IonHeader, IonToolbar } from '@ionic/angular/standalone';
 import { NavigationService } from 'src/app/services/navigation';
-import { supabase } from 'src/app/supabase';
+import { supabase } from 'src/app/services/supabase';
 import { NavController } from '@ionic/angular/standalone';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';

@@ -1,32 +1,24 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import {
   CanActivate,
+  CanActivateFn,
   Router
 } from '@angular/router';
 
 import { SupabaseService } from '../services/supabase';
+import { AuthService } from '../services/auth.service';
 
-@Injectable({
-  providedIn: 'root'
-})
-export class AuthGuard implements CanActivate {
 
-  constructor(
-    private supabase: SupabaseService,
-    private router: Router
-  ) {}
+export const AuthGuard: CanActivateFn=async()=>{
+  const authservice =inject(AuthService);
+  const router=inject(Router);
 
-  async canActivate(): Promise<boolean> {
+  const user =await authservice.getUser();
 
-    const {
-      data: { session }
-    } = await this.supabase.client.auth.getSession();
-
-    if (session) {
-      return true;
-    }
-
-    this.router.navigate(['/sign-in']);
-    return false;
+  if (user){
+    return true;
   }
+  router.navigate(['/sign-in']);
+  return false;
+
 }

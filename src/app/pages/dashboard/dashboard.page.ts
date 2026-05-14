@@ -1,33 +1,35 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
-import { IonHeader, IonToolbar } from '@ionic/angular/standalone';
 import * as L from 'leaflet';
-import { IonicModule } from '@ionic/angular';
 import { AuthService } from 'src/app/services/auth.service';
-import { Route } from '@angular/router';
 import { Router } from '@angular/router';
 import { NavigationService } from 'src/app/services/navigation';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { IonicModule } from '@ionic/angular';
+
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.page.html',
   styleUrls: ['./dashboard.page.scss'],
-  standalone: true,
-  imports: [IonicModule],
+  standalone:true,
+  imports:[CommonModule,FormsModule,IonicModule]
 })
 export class DashboardPage implements OnInit, AfterViewInit {
   map!: L.Map;
+
   constructor(
-    public navService:NavigationService,
+    public navService: NavigationService,
     private authservice: AuthService,
     private router: Router,
   ) {}
+
   async ngOnInit() {
-    const user = this.authservice.getUser();
-    if (!user) {
-      this.router.navigate(['/sign-in']);
-    }
+   
   }
+
   ngAfterViewInit() {
     this.loadMap();
+
     L.tileLayer(
       'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',
       {

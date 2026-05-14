@@ -2,18 +2,23 @@ import { Injectable } from '@angular/core';
 import { createClient } from '@supabase/supabase-js';
 
 const supabaseUrl = 'https://txfyrephofxrqhodbswe.supabase.co';
-const supabaseKey = 'sb_publishable_6J6kPJMBcWL8xGhx4OYBIQ_P-smjczK';
+const supabaseKey = 'YOUR_SUPABASE_KEY';
 
-export const supabase = createClient(supabaseUrl, supabaseKey, {
-  auth: {
-    persistSession: true,
-    autoRefreshToken: true,
-    detectSessionInUrl: false,
-  },
-});
 @Injectable({
   providedIn: 'root',
 })
 export class SupabaseService {
-  client = createClient(supabaseUrl, supabaseKey);
+
+  client = createClient(
+    supabaseUrl,
+    supabaseKey,
+    {
+      auth: {
+        persistSession: true,
+        autoRefreshToken: true,
+        detectSessionInUrl: false,
+      },
+    }
+  );
+
 }

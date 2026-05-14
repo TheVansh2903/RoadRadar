@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './guards/auth-guard';
 
 const routes: Routes = [
   {
     path: 'on-board',
-    loadChildren: () =>
-      import('./pages/on-board/on-board.module').then(
-        (m) => m.OnBoardPageModule,
+    loadComponent: () =>
+      import('./pages/on-board/on-board.page').then(
+        (m) => m.OnBoardPage,
       ),
   },
   {
@@ -16,16 +17,15 @@ const routes: Routes = [
   },
   {
     path: 'dashboard',
-    loadChildren: () =>
-      import('./pages/dashboard/dashboard.module').then(
-        (m) => m.DashboardPageModule,
-      ),
+    loadComponent: () =>
+      import('./pages/dashboard/dashboard.page').then((m) => m.DashboardPage),
+    canActivate: [AuthGuard],
   },
   {
     path: 'forgot-password',
-    loadChildren: () =>
-      import('./pages/forgot-password/forgot-password.module').then(
-        (m) => m.ForgotPasswordPageModule,
+    loadComponent: () =>
+      import('./pages/forgot-password/forgot-password.page').then(
+        (m) => m.ForgotPasswordPage,
       ),
   },
   {
@@ -35,26 +35,26 @@ const routes: Routes = [
   },
   {
     path: 'sign-in',
-    loadChildren: () =>
-      import('./pages/sign-in/sign-in.module').then((m) => m.SignInPageModule),
+    loadComponent: () =>
+      import('./pages/sign-in/sign-in.page').then((m) => m.SignInPage),
   },
   {
     path: 'register',
-    loadChildren: () =>
-      import('./pages/register/register.module').then(
-        (m) => m.RegisterPageModule,
+    loadComponent: () =>
+      import('./pages/register/register.page').then(
+        (m) => m.RegisterPage,
       ),
   },
   {
     path: 'verify',
-    loadChildren: () =>
-      import('./pages/verify/verify.module').then((m) => m.VerifyPageModule),
+    loadComponent: () =>
+      import('./pages/verify/verify.page').then((m) => m.VerifyPage),
   },
   {
     path: 'reset-password',
-    loadChildren: () =>
-      import('./pages/reset-password/reset-password.module').then(
-        (m) => m.ResetPasswordPageModule,
+    loadComponent: () =>
+      import('./pages/reset-password/reset-password.page').then(
+        (m) => m.ResetPasswordPage,
       ),
   },
 ];

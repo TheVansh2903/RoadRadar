@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { IonHeader, IonToolbar } from '@ionic/angular/standalone';
 import { NavigationService } from 'src/app/services/navigation';
-import { supabase } from 'src/app/services/supabase';
+import { SupabaseService } from 'src/app/services/supabase';
 import { NavController } from '@ionic/angular/standalone';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -20,6 +20,7 @@ export class ForgotPasswordPage implements OnInit {
     private navCtrl: NavController,
     public navService: NavigationService,
     private router: Router,
+    private supabase:SupabaseService
   ) {}
 
   ngOnInit() {}
@@ -36,7 +37,7 @@ export class ForgotPasswordPage implements OnInit {
       return;
     }
     try {
-      await supabase.auth.signInWithOtp({ email: this.email });
+      await this.supabase.client.auth.signInWithOtp({ email: this.email });
       this.navCtrl.navigateForward('/verify', {
         queryParams: { email: this.email },
       });

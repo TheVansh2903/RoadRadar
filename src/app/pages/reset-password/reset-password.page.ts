@@ -6,7 +6,7 @@ import { AuthService } from 'src/app/services/auth.service';
 import { FormsModule } from '@angular/forms';
 import { IonicModule, NavController } from '@ionic/angular';
 import { NavigationService } from 'src/app/services/navigation';
-import { supabase } from 'src/app/services/supabase';
+import { SupabaseService } from 'src/app/services/supabase';
 @Component({
   selector: 'app-reset-password',
   templateUrl: './reset-password.page.html',
@@ -23,6 +23,7 @@ export class ResetPasswordPage implements OnInit {
     private authservice: AuthService,
     private router: Router,
     private navCtrl: NavController,
+    private supabase:SupabaseService
   ) {}
 
   ngOnInit() {}
@@ -34,7 +35,7 @@ export class ResetPasswordPage implements OnInit {
   newPassword = '';
 
   async updatePassword() {
-    const { data, error } = await supabase.auth.updateUser({
+    const { data, error } = await this.supabase.client.auth.updateUser({
       password: this.newPassword,
     });
     if (error) {

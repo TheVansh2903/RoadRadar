@@ -1,0 +1,129 @@
+<div class="report-container">
+
+  <div class="title-bar">
+
+    <div class="first-half">
+      <button (click)="navService.back()" class="back-btn">
+        <i class="fa-solid fa-arrow-left"></i>
+      </button>
+
+      <h1>Report Issue</h1>
+    </div>
+
+  </div>
+
+  <form class="report-form">
+
+    <div class="input-group" id="name">
+      <input type="text"
+      placeholder="First name">
+      <input type="text"
+      placeholder="Last name">
+    </div>
+
+    <div class="input-group">
+      <input type="email"
+      placeholder="e-mail address">
+    </div>
+
+    <!-- ISSUE TITLE -->
+    <div class="input-group">
+
+      <input
+        type="text"
+        placeholder="Issue title"
+      />
+    </div>
+
+    <!-- CATEGORY -->
+    <div class="input-group">
+
+      <select>
+        <option selected disabled> Category</option>
+
+        <option>Roads & Infrastructure</option>
+        <option>Water Supply</option>
+        <option>Garbage & Waste</option>
+        <option>Drainage & Sewage</option>
+        <option>Streetlights</option>
+        <option>Public Nuisance</option>
+      </select>
+    </div>
+
+    <!-- DESCRIPTION -->
+    <div class="input-group">
+      <textarea
+        rows="5"
+        placeholder="Describe the issue..."
+      ></textarea>
+    </div>
+
+    <!-- LOCATION -->
+    <div class="input-group">
+      <input
+        type="text"
+        placeholder="Address line 1 "
+      />
+    </div>
+
+    <div class="input-group">
+      <input
+        type="text"
+        placeholder="Address line 2"
+      />
+    </div>
+    <div class="input-group" id="name">
+      <input type="number"
+      placeholder="Pincode">
+      <input type="text"
+      placeholder="District">
+    </div>
+    <div class="input-group" id="name">
+      <input type="text"
+      placeholder="State">
+      <input type="text"
+      placeholder="Country">
+    </div>
+     
+
+
+    <!-- IMAGE -->
+    <div class="input-group">
+      <label>Upload Image</label>
+
+      <input type="file" accept="image/*"  />
+    </div>
+
+    <!-- PRIORITY -->
+    <div class="input-group">
+      <label>Priority</label>
+
+      <div class="priority-options">
+
+        <label class="priority-btn">
+          <input type="radio" name="priority" />
+          <span>Low</span>
+        </label>
+
+        <label class="priority-btn">
+          <input type="radio" name="priority" />
+          <span>Medium</span>
+        </label>
+
+        <label class="priority-btn">
+          <input type="radio" name="priority" />
+          <span>High</span>
+        </label>
+
+      </div>
+    </div>
+
+    <!-- SUBMIT -->
+    <button type="submit" class="submit-btn">
+      <i class="fa-solid fa-paper-plane"></i>
+      Submit Report
+    </button>
+
+  </form>
+
+</div>

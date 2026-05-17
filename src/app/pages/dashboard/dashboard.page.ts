@@ -49,4 +49,7 @@ export class DashboardPage implements OnInit, AfterViewInit {
       this.map.invalidateSize();
     }, 300);
   }
+  goToReportForm(){
+    this.router.navigate(['/report-form'])
+  }
 }

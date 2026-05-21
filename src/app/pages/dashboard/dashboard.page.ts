@@ -7,6 +7,8 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { SupabaseService } from 'src/app/services/supabase';
+import { Geolocation } from '@capacitor/geolocation';
+import { MenuController } from '@ionic/angular';
 
 @Component({
   selector: 'app-dashboard',
@@ -19,11 +21,16 @@ export class DashboardPage implements OnInit, AfterViewInit {
 
   map!: L.Map;
 
+  latitude: number | null=null;
+  longitude: number |null=null;
+  isLoading: boolean = false;
+
   constructor(
     public navService: NavigationService,
     private authservice: AuthService,
     private router: Router,
-    private supabase: SupabaseService
+    private supabase: SupabaseService,
+    private menuCtrl:MenuController
   ) {}
 
   async ngOnInit() {}
@@ -31,6 +38,8 @@ export class DashboardPage implements OnInit, AfterViewInit {
   ngAfterViewInit() {
     this.loadMap();
   }
+
+
 
   async loadMap() {
 
@@ -93,4 +102,46 @@ export class DashboardPage implements OnInit, AfterViewInit {
     this.router.navigate(['/report-form']);
   }
 
+  goToHamburger(){
+    this.menuCtrl.open();
+  }
+  goToProfile() {
+
+  this.router.navigate(['/profile']);
+
+}
+
+logout() {
+
+  localStorage.clear();
+
+  this.router.navigate(['/login']);
+
+}
+
+  async toggleLocation(event: any) {
+    const isChecked = event.target.checked;
+
+    if (isChecked) {
+      // Switch is ON -> Get Location
+      this.isLoading = true;
+      try {
+        const coordinates = await Geolocation.getCurrentPosition();
+        this.latitude = coordinates.coords.latitude;
+        this.longitude = coordinates.coords.longitude;
+        console.log('Location:', this.latitude, this.longitude);
+      } catch (error) {
+        console.error('Error getting location', error);
+        // Optional: Revert the toggle if permission is denied
+        event.target.checked = false; 
+      } finally {
+        this.isLoading = false;
+      }
+    } else {
+      // Switch is OFF -> Clear Location
+      this.latitude = null;
+      this.longitude = null;
+      console.log('Location cleared');
+    }
+  }
 }

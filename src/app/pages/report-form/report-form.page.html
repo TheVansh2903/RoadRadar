@@ -12,17 +12,21 @@
 
   </div>
 
-  <form class="report-form">
+  <form (ngSubmit)="submitReport()" class="report-form">
 
     <div class="input-group" id="name">
       <input type="text"
+      [(ngModel)]="firstName" name="firstName" 
       placeholder="First name">
+      
       <input type="text"
+      [(ngModel)]="lastName" name="lastName"
       placeholder="Last name">
     </div>
 
     <div class="input-group">
       <input type="email"
+      [(ngModel)]="email" name="email"
       placeholder="e-mail address">
     </div>
 
@@ -31,6 +35,7 @@
 
       <input
         type="text"
+        [(ngModel)]="issue" name="issue"
         placeholder="Issue title"
       />
     </div>
@@ -38,15 +43,15 @@
     <!-- CATEGORY -->
     <div class="input-group">
 
-      <select>
+      <select [(ngModel)]="category" name="category"> 
         <option selected disabled> Category</option>
 
-        <option>Roads & Infrastructure</option>
-        <option>Water Supply</option>
-        <option>Garbage & Waste</option>
-        <option>Drainage & Sewage</option>
-        <option>Streetlights</option>
-        <option>Public Nuisance</option>
+        <option value="Roads & Infrastructure">Roads & Infrastructure</option>
+        <option value="Water Supply">Water Supply</option>
+        <option value="Garbage & Waste">Garbage & Waste</option>
+        <option value="Drainage">Drainage & Sewage</option>
+        <option value="Electricity">Electricity</option>
+        <option value="Public Nuisance">Public Nuisance</option>
       </select>
     </div>
 
@@ -54,6 +59,7 @@
     <div class="input-group">
       <textarea
         rows="5"
+        [(ngModel)]="description" name="description"
         placeholder="Describe the issue..."
       ></textarea>
     </div>
@@ -62,6 +68,7 @@
     <div class="input-group">
       <input
         type="text"
+        [(ngModel)]="address1" name="address1"
         placeholder="Address line 1 "
       />
     </div>
@@ -69,19 +76,24 @@
     <div class="input-group">
       <input
         type="text"
+        [(ngModel)]="address2" name="address2"
         placeholder="Address line 2"
       />
     </div>
     <div class="input-group" id="name">
       <input type="number"
+      [(ngModel)]="pincode" name="pincode"
       placeholder="Pincode">
       <input type="text"
+      [(ngModel)]="district" name="district"
       placeholder="District">
     </div>
     <div class="input-group" id="name">
       <input type="text"
+      [(ngModel)]="state" name="state"
       placeholder="State">
       <input type="text"
+      [(ngModel)]="country" name="country"
       placeholder="Country">
     </div>
      
@@ -91,33 +103,52 @@
     <div class="input-group">
       <label>Upload Image</label>
 
-      <input type="file" accept="image/*"  />
+      <input type="file"
+      [(ngModel)]="imageUrl" name="imageUrl"
+      accept="image/*"  />
     </div>
 
-    <!-- PRIORITY -->
-    <div class="input-group">
-      <label>Priority</label>
+   <!-- PRIORITY -->
+<div class="input-group">
 
-      <div class="priority-options">
+  <label>Priority</label>
 
-        <label class="priority-btn">
-          <input type="radio" name="priority" />
-          <span>Low</span>
-        </label>
+  <div class="priority-options">
 
-        <label class="priority-btn">
-          <input type="radio" name="priority" />
-          <span>Medium</span>
-        </label>
+    <label class="priority-btn">
+      <input
+        type="radio"
+        name="priority"
+        value="Low"
+        [(ngModel)]="priority"
+      />
+      <span>Low</span>
+    </label>
 
-        <label class="priority-btn">
-          <input type="radio" name="priority" />
-          <span>High</span>
-        </label>
+    <label class="priority-btn">
+      <input
+        type="radio"
+        name="priority"
+        value="Medium"
+        [(ngModel)]="priority"
+      />
+      <span>Medium</span>
+    </label>
 
-      </div>
-    </div>
+    <label class="priority-btn">
+      <input
+        type="radio"
+        name="priority"
+        value="High"
+        [(ngModel)]="priority"
+      />
+      <span>High</span>
+    </label>
 
+  </div>
+
+</div>
+  
     <!-- SUBMIT -->
     <button type="submit" class="submit-btn">
       <i class="fa-solid fa-paper-plane"></i>

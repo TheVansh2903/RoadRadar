@@ -1,0 +1,160 @@
+<div class="report-container">
+
+  <div class="title-bar">
+
+    <div class="first-half">
+      <button (click)="navService.back()" class="back-btn">
+        <i class="fa-solid fa-arrow-left"></i>
+      </button>
+
+      <h1>Report Issue</h1>
+    </div>
+
+  </div>
+
+  <form (ngSubmit)="submitReport()" class="report-form">
+
+    <div class="input-group" id="name">
+      <input type="text"
+      [(ngModel)]="firstName" name="firstName" 
+      placeholder="First name">
+      
+      <input type="text"
+      [(ngModel)]="lastName" name="lastName"
+      placeholder="Last name">
+    </div>
+
+    <div class="input-group">
+      <input type="email"
+      [(ngModel)]="email" name="email"
+      placeholder="e-mail address">
+    </div>
+
+    <!-- ISSUE TITLE -->
+    <div class="input-group">
+
+      <input
+        type="text"
+        [(ngModel)]="issue" name="issue"
+        placeholder="Issue title"
+      />
+    </div>
+
+    <!-- CATEGORY -->
+    <div class="input-group">
+
+      <select [(ngModel)]="category" name="category"> 
+        <option selected disabled> Category</option>
+
+        <option value="Roads & Infrastructure">Roads & Infrastructure</option>
+        <option value="Water Supply">Water Supply</option>
+        <option value="Garbage & Waste">Garbage & Waste</option>
+        <option value="Drainage">Drainage & Sewage</option>
+        <option value="Electricity">Electricity</option>
+        <option value="Public Nuisance">Public Nuisance</option>
+      </select>
+    </div>
+
+    <!-- DESCRIPTION -->
+    <div class="input-group">
+      <textarea
+        rows="5"
+        [(ngModel)]="description" name="description"
+        placeholder="Describe the issue..."
+      ></textarea>
+    </div>
+
+    <!-- LOCATION -->
+    <div class="input-group">
+      <input
+        type="text"
+        [(ngModel)]="address1" name="address1"
+        placeholder="Address line 1 "
+      />
+    </div>
+
+    <div class="input-group">
+      <input
+        type="text"
+        [(ngModel)]="address2" name="address2"
+        placeholder="Address line 2"
+      />
+    </div>
+    <div class="input-group" id="name">
+      <input type="number"
+      [(ngModel)]="pincode" name="pincode"
+      placeholder="Pincode">
+      <input type="text"
+      [(ngModel)]="district" name="district"
+      placeholder="District">
+    </div>
+    <div class="input-group" id="name">
+      <input type="text"
+      [(ngModel)]="state" name="state"
+      placeholder="State">
+      <input type="text"
+      [(ngModel)]="country" name="country"
+      placeholder="Country">
+    </div>
+     
+
+
+    <!-- IMAGE -->
+    <div class="input-group">
+      <label>Upload Image</label>
+
+      <input type="file"
+      [(ngModel)]="imageUrl" name="imageUrl"
+      accept="image/*"  />
+    </div>
+
+   <!-- PRIORITY -->
+<div class="input-group">
+
+  <label>Priority</label>
+
+  <div class="priority-options">
+
+    <label class="priority-btn">
+      <input
+        type="radio"
+        name="priority"
+        value="Low"
+        [(ngModel)]="priority"
+      />
+      <span>Low</span>
+    </label>
+
+    <label class="priority-btn">
+      <input
+        type="radio"
+        name="priority"
+        value="Medium"
+        [(ngModel)]="priority"
+      />
+      <span>Medium</span>
+    </label>
+
+    <label class="priority-btn">
+      <input
+        type="radio"
+        name="priority"
+        value="High"
+        [(ngModel)]="priority"
+      />
+      <span>High</span>
+    </label>
+
+  </div>
+
+</div>
+  
+    <!-- SUBMIT -->
+    <button type="submit" class="submit-btn">
+      <i class="fa-solid fa-paper-plane"></i>
+      Submit Report
+    </button>
+
+  </form>
+
+</div>

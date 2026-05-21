@@ -6,9 +6,7 @@ const routes: Routes = [
   {
     path: 'on-board',
     loadComponent: () =>
-      import('./pages/on-board/on-board.page').then(
-        (m) => m.OnBoardPage,
-      ),
+      import('./pages/on-board/on-board.page').then((m) => m.OnBoardPage),
   },
   {
     path: 'login',
@@ -41,9 +39,7 @@ const routes: Routes = [
   {
     path: 'register',
     loadComponent: () =>
-      import('./pages/register/register.page').then(
-        (m) => m.RegisterPage,
-      ),
+      import('./pages/register/register.page').then((m) => m.RegisterPage),
   },
   {
     path: 'verify',
@@ -56,6 +52,14 @@ const routes: Routes = [
       import('./pages/reset-password/reset-password.page').then(
         (m) => m.ResetPasswordPage,
       ),
+  },
+  {
+    path: 'report-form',
+    loadComponent: () =>
+      import('./pages/report-form/report-form.page').then(
+        (m) => m.ReportFormPage,
+      ),
+    canActivate: [AuthGuard],
   },
 ];
 

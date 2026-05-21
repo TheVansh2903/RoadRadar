@@ -1,0 +1,225 @@
+.report-container {
+  min-height: 100vh;
+  background: #f5f5f5;
+  color: #111;
+  padding: 20px 16px;
+  font-family: Arial, sans-serif;
+  display: block;
+  justify-content: center;
+  overflow-y: auto;
+}
+
+.report-form {
+  height: fit-content;
+  width: 100%;
+  max-width: 430px;
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 28px 22px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+/* HEADER */
+
+.form-title {
+  font-size: 30px;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 6px;
+}
+
+.form-subtitle {
+  font-size: 13px;
+  color: #777;
+  margin-bottom: 28px;
+}
+
+/* SECTION TITLE */
+
+.section-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 18px;
+  margin-top: 10px;
+}
+
+/* INPUT GROUP */
+
+.input-group {
+  margin-bottom: 18px;
+  justify-content: center;
+  align-items: center;
+}
+
+input[type="file"]::file-selector-button {
+  display: inline;
+  margin-top: 12px;
+}
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+#name{
+  display: inline-flex;
+  gap: 10px;
+}
+/* INPUTS */
+
+.input-group input,
+.input-group select,
+.input-group textarea {
+  width: 100%;
+  height: 46px;
+  border: 1px solid #d6d6d6;
+  border-radius: 8px;
+  padding: 0 14px;
+  font-size: 14px;
+  background: #fff;
+  color: #8a8a8a;
+  outline: none;
+  transition: 0.2s;
+}
+
+.input-group label{
+  display: block;
+  margin-bottom: 10px;
+}
+
+.input-group textarea {
+  min-height: 120px;
+  padding-top: 14px;
+  resize: none;
+}
+
+.input-group input:focus,
+.input-group select:focus,
+.input-group textarea:focus {
+  border-color: #5c6cff;
+  box-shadow: 0 0 0 2px rgba(92, 108, 255, 0.12);
+}
+
+/* ROW INPUTS */
+
+.input-row {
+  display: flex;
+  gap: 12px;
+}
+
+.input-row .input-group {
+  flex: 1;
+}
+
+/* FILE UPLOAD */
+
+.custom-file-upload {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+
+.upload-btn {
+  background: #5c6cff;
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.file-name {
+  font-size: 13px;
+  color: #666;
+}
+
+/* PRIORITY */
+
+.priority-options {
+  display: flex;
+  gap: 10px;
+}
+
+.priority-btn {
+  flex: 1;
+}
+
+.priority-btn input {
+  display: none;
+}
+
+.priority-btn span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 42px;
+  border-radius: 8px;
+  background: #f1f1f1;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.priority-btn input:checked + span {
+  background: #5c6cff;
+  color: #fff;
+  border-color: #5c6cff;
+}
+
+/* CHECKBOX */
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.checkbox-group label {
+  font-size: 13px;
+  color: #555;
+}
+
+/* BUTTON */
+
+.submit-btn {
+  width: 100%;
+  height: 48px;
+  border: none;
+  border-radius: 8px;
+  background: black;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 22px;
+  
+  transition: 0.2s;
+}
+
+.submit-btn:hover {
+  opacity: 0.92;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 480px) {
+
+  .report-form {
+    padding: 24px 18px;
+  }
+
+  .form-title {
+    font-size: 26px;
+  }
+
+  .input-row {
+    flex-direction: column;
+    gap: 0;
+  }
+}
